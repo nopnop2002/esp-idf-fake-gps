@@ -235,7 +235,9 @@ $ foxtrotgps <IP address of the server where gpsd is running>:2947
 
 # View with ROS   
 You can use nmea_serial_driver and rviz_satellite.   
-I live in Nagoya, Japan, but my ROS robot is currently in Central Park, Manhattan.
+The nmea serial driver APT package has a bug and does not work properly.   
+Must be installed from source.   
+I live in Nagoya, Japan, but my ROS robot is currently in Central Park, Manhattan.   
 
 ![rviz_satellite_newyork_2023-03-07_14-12-39](https://user-images.githubusercontent.com/6020549/223572894-728b9b82-8473-4ba4-9805-c69039573497.png)
 
