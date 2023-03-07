@@ -4,7 +4,7 @@ Fake GPS using ESP-IDF.
 ![NMEA_Generator-0](https://user-images.githubusercontent.com/6020549/223572146-e3cff6cd-9ea2-4bfc-bc1f-214ec664f089.jpg)
 
 Windows application for NMEA Generator Utility is published [here](http://4river.a.la9.jp/gps/#004).   
-This tool generates NMEA sentences for GPS receivers and outputs them to serial or TCP ports.
+This tool generates NMEA sentences for GPS receivers and outputs them to serial or TCP ports.   
 When using TCP, this app acts as a TCP server.   
 With this tool, you can go wherever you want in no time.   
 
@@ -21,7 +21,7 @@ Use ESP32S2/S3 to transfer NMEA sentence received by TCP to USB.
 +----------------+     +------------+                        +---------------+
 | NMEA Generator |     | ESP32S2/S3 |                        | Windows/Linux |
 | as FAKE GPS    |TCP  |            | USB                    |               |
-|                |---->|            |----------------------->|               |
+|                |====>|            |----------------------->|               |
 |                |     |            |                        |               |
 +----------------+     +------------+                        +---------------+
 ```
@@ -31,7 +31,7 @@ In addition, it can provide NMEA sentences to two PCs.
 +----------------+     +------------+                        +---------------+
 | NMEA Generator |     | ESP32S2/S3 |                        | Windows/Linux |
 | as FAKE GPS    |TCP  |            | USB                    |               |
-|                |---->|            |----------------------->|               |
+|                |====>|            |----------------------->|               |
 |                |     |            |                        |               |
 +----------------+     |            |                        +---------------+
                        |            |
@@ -55,7 +55,7 @@ ESPs that don't support USB use UART.
 +----------------+     +------------+     +------------+     +---------------+
 | NMEA Generator |     |   ESP32    |     |  UART-USB  |     | Windows/Linux |
 | as FAKE GPS    |TCP  |            |UART |            | USB |               |
-|                |---->|         TX |---->| RX         |---->|               |
+|                |====>|         TX |---->| RX         |---->|               |
 |                |     |            |     |            |     |               |
 +----------------+     +------------+     +------------+     +---------------+
 ```
@@ -130,7 +130,7 @@ Use the ipconfig command from the command prompt.
 - Open port.   
 ![NMEA_Generator-3](https://user-images.githubusercontent.com/6020549/223572379-039f82c0-03a6-4bec-9965-3ea6bace42e4.jpg)
 
-- Connect ESP32 to WindowsPC.   
+- Connect ESP32 to WindowsPC using USB or UART.   
 
 - Build this firmware and start.   
 
@@ -142,8 +142,8 @@ Use the ipconfig command from the command prompt.
 ![screen-windows](https://user-images.githubusercontent.com/6020549/223572698-b32cc723-6d7d-43c3-83b9-84c818b105b9.jpg)
 
 
-# View with gpsd
-
+# Read NMEA with gpsd   
+```
 $ sudo adduser $USER dialout
 
 $ sudo apt-get install gpsd gpsd-clients
@@ -167,16 +167,25 @@ $ sudo systemctl -l --no-pager status gpsd
    CGroup: /system.slice/gpsd.service
            mq5235 /usr/sbin/gpsd -n /dev/ttyACM0
 
+# View with gpsmon
+```
 $ gpsmon
 Enter q to quit.   
+```
+
 ![gpsmon_2023-03-07_16-28-05](https://user-images.githubusercontent.com/6020549/223572752-6a29087e-0eb1-4cc9-9503-902cee070607.png)
 
+# View with cgps
+
+```
 $ cgps
 Enter q to quit.   
+```
+
 ![cgps_2023-03-07_16-32-00](https://user-images.githubusercontent.com/6020549/223572794-fae5f644-c873-4726-ac39-259950fc5ee7.png)
 
 # View with FoxtrotGPS
-
+```
 $ sudo apt install foxtrotgps
 
 $ sudo vi /etc/default/gpsd
@@ -196,12 +205,14 @@ $ sudo systemctl -l --no-pager status gpsd
            mq5235 /usr/sbin/gpsd -n /dev/ttyACM0
 
 $ foxtrotgps
+```
 Crossing Central Park in Manhattan.
+
 ![foxtrotgps_2023-03-07_16-49-09](https://user-images.githubusercontent.com/6020549/223572849-58d6b6a5-c986-4c40-bd1b-258775729472.png)
 ![foxtrotgps_2023-03-07_17-04-07](https://user-images.githubusercontent.com/6020549/223572857-12ff77fc-3158-46f6-b25a-18a3667068a8.png)
 
 # Using FoxtrotGPS from remote
-
+```
 $ sudo vi /lib/systemd/system/gpsd.socket
 #ListenStream=127.0.0.1:2947
 ListenStream=0.0.0.0:2947
@@ -219,7 +230,7 @@ $ sudo systemctl -l --no-pager status gpsd
            mq5235 /usr/sbin/gpsd -n /dev/ttyACM0
 
 $ foxtrotgps <IP address of the server where gpsd is running>:2947
-
+```
 
 # View with ROS   
 You can use nmea_serial_driver and rviz_satellite.   
