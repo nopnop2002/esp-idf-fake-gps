@@ -166,6 +166,7 @@ $ sudo systemctl -l --no-pager status gpsd
     Tasks: 1 (limit: 4411)
    CGroup: /system.slice/gpsd.service
            mq5235 /usr/sbin/gpsd -n /dev/ttyACM0
+```
 
 # View with gpsmon
 ```
