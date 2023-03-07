@@ -1,0 +1,100 @@
+menu "Application Configuration"
+
+	config GPIO_RANGE_MAX
+		int
+		default 33 if IDF_TARGET_ESP32
+		default 46 if IDF_TARGET_ESP32S2
+		default 48 if IDF_TARGET_ESP32S3
+		default 18 if IDF_TARGET_ESP32C2
+		default 19 if IDF_TARGET_ESP32C3
+
+	config ENABLE_USB
+		bool
+		default n if IDF_TARGET_ESP32
+		default y if IDF_TARGET_ESP32S2
+		default y if IDF_TARGET_ESP32S3
+		default n if IDF_TARGET_ESP32C2
+		default n if IDF_TARGET_ESP32C3
+
+	choice WIRE_MODE
+		prompt "Wire protocol"
+		default UART_MODE if IDF_TARGET_ESP32 || IDF_TARGET_ESP32C3 || IDF_TARGET_ESP32C2
+		default USB_MODE if IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+		help
+			Select Wire protocol.
+		config UART_MODE
+			bool "Use UART"
+			help
+				Use UART.
+		config USB_MODE
+			depends on ENABLE_USB
+			bool "Use USB"
+			help
+				Use USB.
+		config BOTH_MODE
+			depends on ENABLE_USB
+			bool "Use USB and UART"
+			help
+				Use USB and UART.
+	endchoice
+
+	config UART_TX_GPIO
+		depends on UART_MODE || BOTH_MODE
+		int "UART TX GPIO number"
+		range 0 GPIO_RANGE_MAX
+		default 17 if IDF_TARGET_ESP32
+		default  2 if IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+		default  1 if IDF_TARGET_ESP32C3 || IDF_TARGET_ESP32C2
+		help
+			GPIO number (IOxx) to UART TX.
+
+	config UART_RX_GPIO
+		depends on UART_MODE || BOTH_MODE
+		int "UART RX GPIO number"
+		range 0 GPIO_RANGE_MAX
+		default 16 if IDF_TARGET_ESP32
+		default  1 if IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+		default  0 if IDF_TARGET_ESP32C3 || IDF_TARGET_ESP32C2
+		help
+			GPIO number (IOxx) to UART RX.
+
+	config UART_BAUD_RATE
+		depends on UART_MODE || BOTH_MODE
+		int "UART communication speed"
+		range 1200 115200
+		default 115200
+		help
+			UART communication speed.
+
+	config ESP_WIFI_SSID
+		string "WiFi SSID"
+		default "myssid"
+		help
+			SSID (network name) for the example to connect to.
+
+	config ESP_WIFI_PASSWORD
+		string "WiFi Password"
+		default "mypassword"
+		help
+			WiFi password (WPA or WPA2) for the example to use.
+
+	config ESP_MAXIMUM_RETRY
+		int "Maximum retry"
+		default 5
+		help
+			Set the Maximum retry to avoid station reconnecting to the AP unlimited when the AP is really inexistent.
+
+	config EXAMPLE_IPV4_ADDR
+		string "IPV4 Address of NMEA Generator"
+		default "192.168.10.101"
+		help
+			The example will connect to this IPV4 address.
+
+	config EXAMPLE_PORT
+		int "Port Number of NMEA Generator"
+		range 0 65535
+		default 5555
+		help
+			The remote port to which the client example will connect to.
+
+endmenu
