@@ -125,7 +125,7 @@ Use the ipconfig command from the command prompt.
 ![NMEA_Generator-1](https://user-images.githubusercontent.com/6020549/223572369-659f7cc3-7999-4ae9-9f9d-a5b0393c421f.jpg)
 
 - Check Rep.   
- This will repeat the NMES transmission forever.  
+ This will repeat the NMEA transmission forever.  
 ![NMEA_Generator-2](https://user-images.githubusercontent.com/6020549/223572375-befc6432-1180-41bb-8ed6-a5c5cba40bcf.jpg)
 
 - Open port.   
