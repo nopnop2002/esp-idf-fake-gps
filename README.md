@@ -233,6 +233,7 @@ $ sudo systemctl -l --no-pager status gpsd
    CGroup: /system.slice/gpsd.service
            mq5235 /usr/sbin/gpsd -n /dev/ttyACM0
 
+# From remote
 $ foxtrotgps <IP address of the server where gpsd is running>:2947
 ```
 
