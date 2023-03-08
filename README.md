@@ -129,6 +129,7 @@ Use the ipconfig command from the command prompt.
 ![NMEA_Generator-2](https://user-images.githubusercontent.com/6020549/223572375-befc6432-1180-41bb-8ed6-a5c5cba40bcf.jpg)
 
 - Open port.   
+ This app acts as a TCP server.   
 ![NMEA_Generator-3](https://user-images.githubusercontent.com/6020549/223572379-039f82c0-03a6-4bec-9965-3ea6bace42e4.jpg)
 
 - Connect ESP32 to WindowsPC using USB or UART.   
