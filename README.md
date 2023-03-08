@@ -140,6 +140,7 @@ Use the ipconfig command from the command prompt.
 ![NMEA_Generator-4](https://user-images.githubusercontent.com/6020549/223572383-b9831680-d5dc-4d2f-b30a-3f5e22b22d07.jpg)
 
 - Open serial terminal on your host.   
+ This will add GPS to your host.   
 ![screen-linux](https://user-images.githubusercontent.com/6020549/223572696-0ab3cff0-61ae-4683-8146-9d57d8377819.jpg)
 ![screen-windows](https://user-images.githubusercontent.com/6020549/223572698-b32cc723-6d7d-43c3-83b9-84c818b105b9.jpg)
 
