@@ -70,7 +70,7 @@ ESP-IDF V5 is required when using ESP32-C2.
 1.Windows PC   
 Windows applications can be downloaded from [here](http://4river.a.la9.jp/gps/#004).   
 Just extract the ZIP file and run it.   
-This applications was made by Japanese, but NMEAGEN217.zip contains English documents, so there is no problem.   
+This applications was made by Japan, but NMEAGEN217.zip contains English documents, so there is no problem.   
 Any questions about the NMEA Generator Utility should be directed to the author, not me.   
 
 2.USB Connector is required when using USB.   
