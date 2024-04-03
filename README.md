@@ -211,7 +211,7 @@ $ sudo systemctl -l --no-pager status gpsd
 
 $ foxtrotgps
 ```
-Crossing Manhattan's Central Park at 100kph.
+It flew over Manhattan's Central Park at 100km/h.   
 
 ![foxtrotgps_2023-03-07_16-49-09](https://user-images.githubusercontent.com/6020549/223572849-58d6b6a5-c986-4c40-bd1b-258775729472.png)
 ![foxtrotgps_2023-03-07_17-04-07](https://user-images.githubusercontent.com/6020549/223572857-12ff77fc-3158-46f6-b25a-18a3667068a8.png)
