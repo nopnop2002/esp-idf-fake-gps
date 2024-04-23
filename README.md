@@ -152,7 +152,9 @@ $ sudo adduser $USER dialout
 
 $ sudo apt-get install gpsd gpsd-clients
 
-$ sudo vi sudo adduser $USER dialout
+$ sudo adduser $USER dialout
+
+$ sudo vi /etc/default/gpsd
 START_DAEMON="true"
 USBAUTO="true"
 DEVICES="/dev/ttyUSB0"
