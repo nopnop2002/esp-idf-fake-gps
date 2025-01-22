@@ -138,7 +138,9 @@ Use the ipconfig command from the command prompt.
 ![Image](https://github.com/user-attachments/assets/302b6878-42d5-4efe-972b-14d482a9e84c)
 
 - NMEA transmission start.    
+ NMEA Generator shows your current location.   
 ![Image](https://github.com/user-attachments/assets/48090c91-bf61-440f-afb4-9564cab240fd)
+![Image](https://github.com/user-attachments/assets/983afb21-42d6-4d42-8aae-97c2bbc46957)
 
 - Open serial terminal on your host.   
  This will add GPS to your host.   
