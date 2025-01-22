@@ -133,7 +133,7 @@ Use the ipconfig command from the command prompt.
 ![Image](https://github.com/user-attachments/assets/20417a3b-8382-443e-87b9-19bce5574706)
 
 - Open port.   
- This app acts as a TCP server.   
+ ESP32 acts as a TCP server.   
 ![Image](https://github.com/user-attachments/assets/302b6878-42d5-4efe-972b-14d482a9e84c)
 
 - NMEA transmission start.    
