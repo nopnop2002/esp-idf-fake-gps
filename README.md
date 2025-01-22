@@ -75,7 +75,7 @@ This applications was made by Japan, but NMEAGEN217.zip contains English documen
 Any questions about the NMEA Generator Utility should be directed to the author, not me.   
 
 2.USB Connector is required when using USB.   
-I used this:   
+I used this breakout:   
 ![usb-connector](https://user-images.githubusercontent.com/6020549/124848149-3714ba00-dfd7-11eb-8344-8b120790c5c5.JPG)
 
 ```
@@ -133,8 +133,7 @@ Use the ipconfig command from the command prompt.
 ![Image](https://github.com/user-attachments/assets/20417a3b-8382-443e-87b9-19bce5574706)
 
 - Open port.   
- ESP32 acts as a TCP server.   
- NMEA Generator acts as a TCP client.   
+ NMEA Generator acts as a TCP server.   
 ![Image](https://github.com/user-attachments/assets/302b6878-42d5-4efe-972b-14d482a9e84c)
 
 - NMEA transmission start.    
