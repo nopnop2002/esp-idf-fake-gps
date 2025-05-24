@@ -75,7 +75,7 @@ This applications was made by Japan, but NMEAGEN217.zip contains English documen
 Any questions about the NMEA Generator Utility should be directed to the author, not me.   
 
 2.USB Connector is required when using USB.   
-I used this breakout:   
+I used this USB Mini femail:   
 ![usb-connector](https://user-images.githubusercontent.com/6020549/124848149-3714ba00-dfd7-11eb-8344-8b120790c5c5.JPG)
 
 ```
