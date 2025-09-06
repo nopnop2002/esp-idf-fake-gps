@@ -63,8 +63,8 @@ ESPs that don't support USB use UART.
 
 
 # Software requirements   
-ESP-IDF V4.4/V5.0.   
-ESP-IDF V5.0 is required when using ESP32-C2.   
+ESP-IDF V5.0 or later.   
+ESP-IDF V4.4 release branch reached EOL in July 2024.   
 
 # Hardware requirements   
 
